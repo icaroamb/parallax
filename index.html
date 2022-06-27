@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">LOGO</a>
+        <ul>
+            <li><a href="#" class="active">Menu</a></li>
+            <li><a href="#">Trabalhos</a></li>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="images/stars.png" alt="Estrelas" id="stars">
+        <img src="images/moon.png" alt="Lua" id="moon">
+        <img src="images/mountains_behind.png" alt="Montanhas" id="mountains_behind">
+        <h2 id="text">Luz do Luar</h2>
+        <a href="#sec" id="btn">Explorar</a>
+        <img src="images/mountains_front.png" alt="Montanhas" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Efeito de Rolagem Parallax</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem possimus esse placeat maxime dignissimos adipisci modi animi aspernatur molestiae sunt omnis laudantium accusamus, facere qui laborum eligendi blanditiis dicta recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam recusandae accusamus saepe laborum atque est, distinctio error, modi libero expedita fugit officia mollitia sed officiis nihil rerum ab sunt obcaecati? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam error voluptatem magnam distinctio. Alias iusto nam assumenda velit unde debitis quaerat voluptatibus saepe enim reprehenderit et, quam eum quia non? <br> <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero expedita eveniet consequuntur, cum soluta. Nam error facilis, ea rem tempore aliquam pariatur sequi nisi veritatis praesentium nostrum corrupti culpa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde assumenda eligendi, totam possimus ducimus veniam in debitis sit, repellat numquam dolor! Corporis vero dignissimos tenetur odio cum quis ducimus atque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo magni aut et iusto perferendis architecto temporibus. Hic eligendi eius numquam voluptates tempora, inventore id corrupti mollitia maiores quae, esse laudantium? <br><br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi vitae est asperiores cupiditate veritatis cumque facilis maiores suscipit optio mollitia voluptas quam distinctio, excepturi enim nesciunt, expedita veniam perspiciatis dolor. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque est eos deserunt inventore quibusdam in repudiandae natus eum quasi assumenda alias, nemo aliquam fuga adipisci, quo, iste voluptatibus dolorum ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam natus doloremque, nemo nulla incidunt nobis, distinctio voluptatem odio tempore fugit adipisci sit iusto animi doloribus placeat eveniet vitae eligendi omnis?</p>
+    </div>
+    <footer>
+        <p>Feito por <a href="https://github.com/icaroamb">Icaro Mariano</a></p>
+    </footer>
+    <script>
+        alert('Use a barra de rolagem lateral para melhores resultados!!!')
+        let stars = document.getElementById('stars')
+        let moon = document.getElementById('moon')
+        let mountains_behind = document.getElementById('mountains_behind')
+        let text = document.getElementById('text')
+        let btn = document.getElementById('btn')
+        let mountains_front = document.getElementById('mountains_front')
+        let header = document.querySelector('header')
+        
+        //AÇÕES DE ROLAGEM 
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY
+            stars.style.left = value * 0.25 + 'px'
+            moon.style.top = value * 1.05 + 'px'
+            mountains_behind.style.top = value * 0.5 + 'px'
+            mountains_front.style.top = value * 0 + 'px'
+            text.style.marginRight = value * 4 + 'px'
+            text.style.marginTop = value * 1.5 + 'px'
+            btn.style.marginTop = value * 1.5 + 'px'
+            header.style.top = value * 0.5 + 'px'
+})
+
+    </script>
+</body>
+</html>
